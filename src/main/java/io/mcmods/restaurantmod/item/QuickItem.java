@@ -35,8 +35,14 @@ public class QuickItem extends Item {
 	protected PlayerEntity player;
 	protected Hand hand;
 
-	protected Item.Properties properties;
+	/**
+	 * Creates a new QuickItem and adds it to the registry. (Note: You probably
+	 * shouldn't be calling this directly)
+	 */
 
+	protected QuickItem() {
+		super((new Item.Properties().group((ModItemGroups.MOD_ITEM_GROUP))));
+	}
 
 	/**
 	 * Creates a new QuickItem and adds it to the registry. (Note: You probably
@@ -44,7 +50,6 @@ public class QuickItem extends Item {
 	 */
 	protected QuickItem(Item.Properties properties) {
 		super(properties.group((ModItemGroups.MOD_ITEM_GROUP)));
-		this.properties = properties;
 	}
 
 	public String getMyName() {
